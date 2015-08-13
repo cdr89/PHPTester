@@ -1,10 +1,3 @@
-# PHPTester
-PHP testing framework
-
-### Usage example:
-
-###### Build your own test case:
-```php
 <?php
 /**
  * @author Domenico Rosario Caldesi, <d.r.caldesi@gmail.com>
@@ -47,27 +40,3 @@ class SampleTestCase extends TestCase {
     }
 
 }
-```
-
-###### Create a launcher web page:
-```php
-<?php
-require_once 'testCases/SampleTestCase.php';
-require_once 'testEngine/TestLauncher.php';
-
-$sampleTestCase = new SampleTestCase();
-$testLauncher = new TestLauncher($sampleTestCase);
-$testLauncher->doTest();
-?>
-```
-
-###### You will see the output calling your test webpage from browser:
-```
-setUp() called
-testToPass() called
-testToFail() called
-Assertion Failed on testToFail: Expected "true" but was "false"
-cleanUp() called
-```
-
-### !!!This is still a draft of a testing framework!!!

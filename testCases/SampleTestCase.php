@@ -9,33 +9,31 @@ class SampleTestCase extends TestCase {
 
     public function setUp() {
         // do nothing
-        echo 'setUp() called<br/>';
     }
 
     public function cleanUp() {
         // do nothing
-        echo 'cleanUp() called<br/>';
     }
 
     public function testToPass() {
-        echo 'testToPass() called<br/>';
         $this->assertTrue(true);
     }
 
     public function testToFail() {
-        echo 'testToFail() called<br/>';
         $this->assertTrue(false);
+    }
+
+    public function testThatRaiseAnException() {
+        throw new Exception('exceptionMessage');
     }
 
     // These functions are not tested:
 
     private function testPrivateFunctionAreNotTested() {
-        echo 'testPrivateFunctionAreNotTested() called<br/>';
         $this->assertTrue(false);
     }
 
     public function functionThatNotStartWithTestAreNotTested() {
-        echo 'functionThatNotStartWithTestAreNotTested() called<br/>';
         $this->assertTrue(false);
     }
 

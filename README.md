@@ -16,33 +16,31 @@ class SampleTestCase extends TestCase {
 
     public function setUp() {
         // do nothing
-        echo 'setUp() called<br/>';
     }
 
     public function cleanUp() {
         // do nothing
-        echo 'cleanUp() called<br/>';
     }
 
     public function testToPass() {
-        echo 'testToPass() called<br/>';
         $this->assertTrue(true);
     }
 
     public function testToFail() {
-        echo 'testToFail() called<br/>';
         $this->assertTrue(false);
+    }
+
+    public function testThatRaiseAnException() {
+        throw new Exception('exceptionMessage');
     }
 
     // These functions are not tested:
 
     private function testPrivateFunctionAreNotTested() {
-        echo 'testPrivateFunctionAreNotTested() called<br/>';
         $this->assertTrue(false);
     }
 
     public function functionThatNotStartWithTestAreNotTested() {
-        echo 'functionThatNotStartWithTestAreNotTested() called<br/>';
         $this->assertTrue(false);
     }
 
@@ -62,12 +60,4 @@ $testLauncher->doTest();
 ```
 
 ###### You will see the output calling your test webpage from browser:
-```
-setUp() called
-testToPass() called
-testToFail() called
-Assertion Failed on testToFail: Expected "true" but was "false"
-cleanUp() called
-```
-
-### !!!This is still a draft of a testing framework!!!
+[http://localhost/PHPTester/test.php](http://localhost/PHPTester/test.php)

@@ -36,9 +36,105 @@ abstract class TestCase {
      */
     public final static function assertTrue($value) {
         if ($value != true)
-            throw new AssertionFailedException('Expected "true" but was "false"');
+            throw new AssertionFailedException('Expected "true"');
     }
 
-    //TODO implement other assertions
+    /**
+     * Assert $value == false
+     * @param $value
+     * @throws AssertionFailedException
+     */
+    public final static function assertFalse($value) {
+        if ($value != false)
+            throw new AssertionFailedException('Expected "false"');
+    }
+
+    /**
+     * Assert $value1 == $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertEqual($value1, $value2) {
+        if ($value1 != $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be equals to "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 != $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertNotEqual($value1, $value2) {
+        if ($value1 == $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" not to be equals to "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 === $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertIdentical($value1, $value2) {
+        if ($value1 !== $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be identical to "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 !== $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertNotIdentical($value1, $value2) {
+        if ($value1 === $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" not to be identical to "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 < $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertLessThan($value1, $value2) {
+        if ($value1 >= $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be less than "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 <= $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertLessThanOrEqual($value1, $value2) {
+        if ($value1 > $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be less than or equal to "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 > $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertGreaterThan($value1, $value2) {
+        if ($value1 <= $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be greater than "' . $value2 . '""' );
+    }
+
+    /**
+     * Assert $value1 >= $value2
+     * @param $value1
+     * @param $value2
+     * @throws AssertionFailedException
+     */
+    public final static function assertGreaterThanOrEqual($value1, $value2) {
+        if ($value1 < $value2)
+            throw new AssertionFailedException('Expected "' . $value1 . '" to be greater than or equal to "' . $value2 . '""' );
+    }
 
 }
